@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIGITAL HABITS SURVEY</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css')}}">
+    <script>
+        function toggleInfluencerInput() {
+            var yesOption = document.getElementById("influencer_yes");
+            var influencerInput = document.getElementById("influencer_name_div");
+            influencerInput.style.display = yesOption.checked ? "block" : "none";
+        }
+    </script>
+
+    <script>
+        function toggleOther() {
+            const platformSelect = document.getElementById("social_media_platforms");
+            const otherPlatformDiv = document.getElementById("other_platform_div");
+            if (platformSelect.value === "Other") {
+                otherPlatformDiv.style.display = "block";
+            } else {
+                otherPlatformDiv.style.display = "none";
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>DIGITAL HABITS & SOCIAL MEDIA USAGE SURVEY</h2>
+        <form method="post" action="/">
+
+            You are a:<br>
+            <input type="radio" name="user_type" value="Student">Student
+            <input type="radio" name="user_type" value="Teacher">Teacher
+            <input type="radio" name="user_type" value="Any Other">Any Other
+            <br><br><hr>
+
+            Name:<br>
+            <input type="text" name="full_name" required>
+            <br><br><hr>
+
+            Age:<br>
+            <input type="number" name="age" required>
+            <br><br><hr>
+
+            Gender:<br>
+            <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Female">Female
+            <input type="radio" name="gender" value="Others">Others
+            <br><br><hr>
+
+            College:<br>
+            <input type="text" name="college_name" required>
+            <br><br><hr>
+
+            Year of Study:<br>
+            <input type="radio" name="year_of_study" value="1st">1st
+            <input type="radio" name="year_of_study" value="2nd">2nd
+            <input type="radio" name="year_of_study" value="3rd">3rd
+            <input type="radio" name="year_of_study" value="Other">Other
+            <input type="radio" name="year_of_study" value="I am not a student">I am not a student
+            <br><br><hr>
+
+            Field of Study/teaching:<br>
+            <input type="text" name="field_of_study" required>
+            <br><br><hr>
+
+            Which device do you use most for content engagement?<br>
+            <input type="radio" name="preferred_device" value="Mobile">Mobile
+            <input type="radio" name="preferred_device" value="Laptop">Laptop/PC
+            <input type="radio" name="preferred_device" value="Tablet">Tablet
+            <input type="radio" name="preferred_device" value="Other">Other
+            <br><br><hr>
+
+            What is your Daily Screen Time?<br>
+            <input type="radio" name="daily_screen_time" value="Less than 1 hour">Less than 1 hour
+            <input type="radio" name="daily_screen_time" value="1-2 hours">1-2 hours
+            <input type="radio" name="daily_screen_time" value="3-4 hours">3-4 hours
+            <input type="radio" name="daily_screen_time" value="More than 4 hours">More than 4 hours
+            <br><br><hr>
+
+            Which is the mostly used platform by you?<br>
+            <select name="social_media_platforms" id="social_media_platforms" onclick="toggleOther()" required>
+                <option value="" disabled selected>--Select a platform--</option>
+                <option value="Instagram">Instagram</option>
+                <option>BGMI</option>
+                <option>Whatsapp</option>
+                <option>YouTube</option>
+                <option>Snapchat</option>
+                <option>FreeFire</option>
+                <option>Twitter/X</option>
+                <option>LinkedIn</option>
+                <option>Other</option>
+            </select><br>
+            <div id="other_platform_div">
+                Please Specify:<br>
+                <input type="text" id="other_platform" name="other_platform">
+            </div><br><hr>
+
+            Do you use device/social media during lectures or study sessions?<br>
+            <input type="radio" name="during_lectures" value="Yes">Yes
+            <input type="radio" name="during_lectures" value="No">No
+            <br><br><hr>
+
+            what is your primary reason for using social media?<br>
+            <input type="radio" name="primary_purpose" value="Entertainment">Entertainment
+            <input type="radio" name="primary_purpose" value="Education">Education
+            <input type="radio" name="primary_purpose" value="Networking">Networking
+            <input type="radio" name="primary_purpose" value="News">News
+            <input type="radio" name="primary_purpose" value="Shopping">Shopping
+            <input type="radio" name="primary_purpose" value="Just for scrolling">Just for scrolling
+            <br><br><hr>
+
+            How often do you check notifications?<br>
+            <input type="radio" name="check_frequency" value="Every few minutes">Every few minutes
+            <input type="radio" name="check_frequency" value="Hourly">Hourly
+            <input type="radio" name="check_frequency" value="Few times a day">Few times a day
+            <input type="radio" name="check_frequency" value="Rarely">Rarely
+            <br><br><hr>
+
+            Does it affect your academic performance?<br>
+            <input type="radio" name="academic_impact" value="Yes">Yes
+            <input type="radio" name="academic_impact" value="No">No
+            <br><br><hr>
+
+            Have you ever tried a social media detox(temporary break from social media)?<br>
+            <input type="radio" name="social_media_detox" value="Yes">Yes
+            <input type="radio" name="social_media_detox" value="No">No
+            <br><br><hr>
+
+            What is your favourite type of content?<br>
+            <input type="radio" name="favourite_content" value="Memes & entertainment">Memes & entertainment
+            <input type="radio" name="favourite_content" value="News & current affairs">News & current affairs
+            <input type="radio" name="favourite_content" value="Educational content">Educational content
+            <input type="radio" name="favourite_content" value="Fashion & lifestyle">Fashion & lifestyle
+            <input type="radio" name="favourite_content" value="Gaming & technology">Gaming & technology
+            <br><br><hr>
+
+            Do you follow any influencer on social media?<br>
+            <div>
+                <input type="radio" id="influencer_yes" name="follow_influencers" value="Yes"
+                    onclick="toggleInfluencerInput()">Yes
+                <input type="radio" name="follow_influencers" value="No">No
+            </div>
+            <div id="influencer_name_div">
+                <label for="influencer_name">If Yes, mention their name:</label><br>
+                <input type="text" id="influencer_name" name="influencer_name">
+            </div><br><hr>
+
+            Have you ever purchased something based on social media ADs?<br>
+            <input type="radio" name="purchase_based_on_ADs" value="Yes">Yes
+            <input type="radio" name="purchase_based_on_ADs" value="No">No
+            <br><br><hr>
+
+            Do you think social media affects your mental well-being?<br>
+            <input type="radio" name="mental_health_impact" value="Yes">Yes
+            <input type="radio" name="mental_health_impact" value="No">No
+            <input type="radio" name="mental_health_impact" value="Maybe">Maybe
+            <br><br><hr>
+
+            Are you concerned about privacy on social media?<br>
+            <input type="radio" name="privacy_concern" value="Yes">Yes
+            <input type="radio" name="privacy_concern" value="No">No
+            <br><br><hr>
+
+            Have you ever experienced cyberbullying or online harassment?<br>
+            <input type="radio" name="cyberbullying_experience" value="Yes">Yes
+            <input type="radio" name="cyberbullying_experience" value="No">No
+            <br><br><hr>
+
+            Do you use strong passwords and two-factor authentication?<br>
+            <input type="radio" name="security_measures" value="Yes">Yes
+            <input type="radio" name="security_measures" value="No">No
+            <br><br><hr>
+
+            Would you prefer online communication rather than face-to-face communication?<br>
+            <input type="radio" name="prefer_online_communication" value="Yes">Yes
+            <input type="radio" name="prefer_online_communication" value="No">No
+            <br><br><hr>
+
+            Impact on productivity(1-5):<br>
+            <input type="number" name="reduce_usage_for_productivity" min="1" max="5">
+            <br><br><hr>
+
+            Do you feel social media affects your sleep schedule?<br>
+            <input type="radio" name="sleep_impact" value="Yes">Yes
+            <input type="radio" name="sleep_impact" value="No">No
+            <br><br><hr>
+
+            Have you ever deleted or deactivated a social media account?<br>
+            <input type="radio" name="deleted_account" value="Yes">Yes
+            <input type="radio" name="deleted_account" value="No">No
+            <br><br><hr>
+
+            Additional Comments:
+            <textarea name="additional_comments"></textarea><br><br><hr>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
