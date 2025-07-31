@@ -28,19 +28,21 @@ The goal is to analyze digital habits and social media usage patterns among coll
 ------------------------------------------
 
 📁 Project Structure
-survey_project/
-    ├──FlaskApp/  
-          ├── app.py              # Flask backend logic 
-          ├── requirements.txt       # Python dependencies 
-          ├── responses.sql            # MySQL table creation script
-          │ ├── static/   
-                  ├── style.css          # CSS styling   
-                  ├── qr_image.png         # QR code image  
-                  ├── clipboard_bg.jpg         # Form Background image  
-            ├── templates/  
-                  ├── form.html         # HTML form template 
-    ├──PowerBI_dashboard
-            ├──snapshots            # Store the dashboard(.pbix) file and all the snapshots here 
+
+| survey_project/
+  
+     ├──FlaskApp/  
+     |       ├── app.py              # Flask backend logic 
+     |       ├── requirements.txt       # Python dependencies 
+     |       ├── responses.sql            # MySQL table creation script
+     |       ├── static/   
+     |           ├── style.css          # CSS styling   
+     |           ├── qr_image.png         # QR code image  
+     |           ├── clipboard_bg.jpg         # Form Background image  
+     |       ├── templates/  
+     |            ├── form.html         # HTML form template 
+     ├──PowerBI_dashboard
+          ├──snapshots            # Store the dashboard(.pbix) file and all the snapshots here 
 -----------------------------------------
 
 🔐 Note
