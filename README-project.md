@@ -103,6 +103,11 @@ You can find:
 Anupama Chougule
 Computer Application Graduate | Aspiring Data Analyst
 
+-----------------------------------------
+
+### 🔗 Connect with me:
+- [LinkedIn]---> www.linkedin.com/in/anupama-chougule271
+- [GitHub]---> https://github.com/AnupamaChougule
 
 -----------------------------------------
 
